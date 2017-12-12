@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Deeplink</title>
+	<title>Deeplink Demo Page</title>
 </head>
 <body>
 <script type="text/javascript">
-	var base_url = window.location.href.split("?src=")[0];
-	var src = window.location.href.split("?src=")[1];
-	console.log(window.location.href);
-	console.log(base_url);
-	console.log(src);
-	window.location.href = base_url;
+	var current_page_url = window.location.href;
+	if (current_page_url.indexOf("?src=") !== -1) {
+		var base_url = current_page_url.split("?src=")[0];
+		var src = current_page_url.split("?src=")[1];
+		console.log(current_page_url);
+		console.log(base_url);
+		console.log(src);
+		window.location.href = base_url;
+	}
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111105878-1"></script>
