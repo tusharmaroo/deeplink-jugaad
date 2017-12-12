@@ -4,6 +4,14 @@
 	<title>Deeplink</title>
 </head>
 <body>
+<script type="text/javascript">
+	var base_url = window.location.href.split("?src=")[0];
+	var src = window.location.href.split("?src=")[1];
+	console.log(window.location.href);
+	console.log(base_url);
+	console.log(src);
+	window.location.href = base_url;
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111105878-1"></script>
 <script>
