@@ -4,25 +4,29 @@
 	<title>Deeplink Demo Page</title>
 </head>
 <body>
-<script type="text/javascript">
-	var current_page_url = window.location.href;
-	if (current_page_url.indexOf("?src=") !== -1) {
-		var base_url = current_page_url.split("?src=")[0];
-		var src = current_page_url.split("?src=")[1];
-		console.log(current_page_url);
-		console.log(base_url);
-		console.log(src);
-		window.location.href = base_url;
-	}
-</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111105878-1"></script>
 <script>
+  var current_page_url = window.location.href;
+  var src = '';
+	if (current_page_url.indexOf("?src=") !== -1) {
+		var base_url = current_page_url.split("?src=")[0];
+		src = current_page_url.split("?src=")[1];
+		console.log(current_page_url);
+		console.log(base_url);
+		console.log(src);
+	}
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('event', 'timestamp', {'dimension1': Date.now()});
+  gtag('event', 'referral_src', {'dimension2': src});
   gtag('config', 'UA-111105878-1');
+
+  if (current_page_url.indexOf("?src=") !== -1) {
+  	window.location.href = base_url;
+  }
 </script>
 
 </body>
