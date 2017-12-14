@@ -23,6 +23,7 @@
 		console.log(base_url);
 		console.log(src);
 		gtag('event', 'timestamp', {'metric1': Date.now()});
+		gtag('event', 'occurence_time', {'dimension1': Date.now()});
 		gtag('event', 'referral_src', {'dimension2': src});
 	}
 
