@@ -9,19 +9,23 @@
 <script>
   var current_page_url = window.location.href;
   var src = '';
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){
+		dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
 	if (current_page_url.indexOf("?src=") !== -1) {
 		var base_url = current_page_url.split("?src=")[0];
 		src = current_page_url.split("?src=")[1];
 		console.log(current_page_url);
 		console.log(base_url);
 		console.log(src);
+		gtag('event', 'timestamp', {'metric1': Date.now()});
+		gtag('event', 'referral_src', {'dimension2': src});
 	}
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('event', 'timestamp', {'metric1': Date.now()});
-  gtag('event', 'referral_src', {'dimension2': src});
   gtag('config', 'UA-111105878-1');
 
   if (current_page_url.indexOf("?src=") !== -1) {
