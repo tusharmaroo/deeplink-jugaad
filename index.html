@@ -23,7 +23,6 @@
 		dataLayer.push(arguments);
   }
   gtag('js', new Date());
-	gtag('event', 'timestamp', {'metric1': Date.now()});
 	gtag('event', 'occurence_time', {'dimension1': Date.now()});
 	gtag('event', 'referral_src', {'dimension2': src});
   gtag('config', 'UA-111105878-1');
