@@ -16,17 +16,17 @@
 		console.log(current_page_url);
 		console.log(base_url);
 		console.log(src);
+		alert("0current_page_url: " + current_page_url + ", base_url: " + base_url + ", src: " + src);
 	}
 
 	window.dataLayer = window.dataLayer || [];
   function gtag(){
 		dataLayer.push(arguments);
   }
-  gtag('js', new Date());
-	gtag('event', 'occurence_time', {'dimension1': Date.now()});
+  gtag('js', new Date());,
 	gtag('event', 'referral_src', {'dimension2': src});
   gtag('config', 'UA-111105878-1');
-
+  alert("Pushing event to google analytics");
   if (current_page_url.indexOf("?src=") !== -1) {
   	window.location.href = base_url;
   }
