@@ -32,18 +32,20 @@
 			 s.parentNode.insertBefore(wzrk, s);
 	  })();
 
-    clevertap.event.push("Referral_event", {
-      "event_creation_time": Date.now(),
-      "campaign_id": campaign_id,
-      "src": src,
-    });
-
     function redirectionFunction(){
       if (current_page_url.indexOf("?src=") !== -1) {
         window.location.href = base_url;
       }
     }
-    setTimeout(redirectionFunction, 500);
+
+    if (current_page_url.indexOf("?src=") !== -1) {
+      clevertap.event.push("Referral_event", {
+        "event_creation_time": Date.now(),
+        "campaign_id": campaign_id,
+        "src": src,
+      });
+      setTimeout(redirectionFunction, 500);
+    }
 	</script>
 
 </head>
