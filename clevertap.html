@@ -7,16 +7,17 @@
     var current_page_url = window.location.href;
     var src = ''; 
     var campaign_id = '';
+    var redirection_url = '';
 
     if (current_page_url.indexOf("?src=") !== -1) {
       var base_url = current_page_url.split("?src=")[0];
-      var redirection_url = window.location.pathname;
-      src = current_page_url.split("?src=")[1].split("&cid=")[0];
+      var redirection_url = current_page_url.split("&url=")[1].split("&cid=")[0];
+      src = current_page_url.split("?src=")[1].split("&url=")[0];
       campaign_id = current_page_url.split("&cid=")[1];
       console.log(current_page_url);
       console.log(base_url);
       console.log(src);
-      alert("redirection_url: " + redirection_url + ", base_url: " + base_url + ", src: " + src + ", cid: " + campaign_id);
+      alert("redirection_url: " + decodeURIComponent(redirection_url) + ", base_url: " + base_url + ", src: " + src + ", cid: " + campaign_id);
     }
 	 
    var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[]};
@@ -34,7 +35,7 @@
 
     function redirectionFunction(){
       if (current_page_url.indexOf("?src=") !== -1) {
-        window.location.href = base_url;
+        window.location.href = decodeURIComponent(base_url);
       }
     }
 
