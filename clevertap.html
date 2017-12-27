@@ -35,7 +35,7 @@
 
     function redirectionFunction(){
       if (current_page_url.indexOf("?src=") !== -1) {
-        window.location.href = decodeURIComponent(base_url);
+        window.location.href = decodeURIComponent(redirection_url);
       }
     }
 
