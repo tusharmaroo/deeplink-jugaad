@@ -44,6 +44,7 @@
         "event_creation_time": Date.now(),
         "campaign_id": campaign_id,
         "src": src,
+        "deeplink_url": decodeURIComponent(redirection_url)
       });
       setTimeout(redirectionFunction, 500);
     }
