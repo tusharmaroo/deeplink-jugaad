@@ -38,9 +38,12 @@
       "src": src,
     });
 
-    if (current_page_url.indexOf("?src=") !== -1) {
-      window.location.href = base_url;
+    function redirectionFunction(){
+      if (current_page_url.indexOf("?src=") !== -1) {
+        window.location.href = base_url;
+      }
     }
+    setTimeout(redirectionFunction, 500);
 	</script>
 
 </head>
