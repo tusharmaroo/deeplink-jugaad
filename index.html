@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ShopX Redirect</title>
+  <title>ShopX Redirect</title>
 
-	<script type="text/javascript">
+  <script type="text/javascript">
     var current_page_url = window.location.href;
     var src = ''; 
     var campaign_id = '';
@@ -15,19 +15,19 @@
       src = current_page_url.split("?src=")[1].split("&url=")[0];
       campaign_id = current_page_url.split("&cid=")[1];
     }
-	 
+   
    var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[]};
 
-	 clevertap.account.push({"id": "TEST-79W-4W8-WZ5Z"});
+   clevertap.account.push({"id": "TEST-79W-4W8-WZ5Z"});
 
-	 (function () {
-			 var wzrk = document.createElement('script');
-			 wzrk.type = 'text/javascript';
-			 wzrk.async = true;
-			 wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
-			 var s = document.getElementsByTagName('script')[0];
-			 s.parentNode.insertBefore(wzrk, s);
-	  })();
+   (function () {
+       var wzrk = document.createElement('script');
+       wzrk.type = 'text/javascript';
+       wzrk.async = true;
+       wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(wzrk, s);
+    })();
 
     function redirectionFunction(){
       if (current_page_url.indexOf("?src=") !== -1) {
@@ -44,7 +44,7 @@
       });
       setTimeout(redirectionFunction, 200);
     }
-	</script>
+  </script>
 
 </head>
 <body style="text-align: center;">
